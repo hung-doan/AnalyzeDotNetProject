@@ -1,0 +1,29 @@
+name: Build on push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: dotnet publish
+        run: dotnet publish ./AnalyzeDotNetProject.csproj -c Release -o ./Release
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: AnalyzeDotNetProject
+          path: ./Release
