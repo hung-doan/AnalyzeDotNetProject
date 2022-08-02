@@ -23,8 +23,9 @@ namespace AnalyzeDotNetProject
 
             if (runStatus.IsSuccess)
             {
-                string dependencyGraphText = File.ReadAllText(dgOutput);
-                return new DependencyGraphSpec(JsonConvert.DeserializeObject<JObject>(dependencyGraphText));
+                //string dependencyGraphText = File.ReadAllText(dgOutput);
+                //return new DependencyGraphSpec(JsonConvert.DeserializeObject<JObject>(dependencyGraphText));
+                return DependencyGraphSpec.Load(dgOutput);
             }
             else
             {

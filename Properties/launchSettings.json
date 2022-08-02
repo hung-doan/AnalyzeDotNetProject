@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AnalyzeDotNetProject": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
