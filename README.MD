@@ -1,4 +1,5 @@
-# Getting started
+
+# Getting started ![Build status](https://github.com/github/docs/actions/workflows/on-push.yml/badge.svg)
 
 ## How to Build
 
